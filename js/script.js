@@ -89,7 +89,12 @@ $('.activities :checkbox').click(function(){
 // --------------------------------------------------------------------
 // Payment Info Section
 // --------------------------------------------------------------------
+
+// Choose credit card payment by default
+$("#payment").val("credit card");
+
 $('#payment').change(function(){
+        
     if($(this).val() === 'credit card') {
         $('#paypal').hide();
         $('#bitcoin').hide();
@@ -149,11 +154,7 @@ function validateForm() {
     }
 
     // Check the name field
-    if($('#payment').val() === null) {
-        $('.validation.payment-validation').show();
-        isValid = false;
-    }
-
+    
     // Check the credit card validation
     if($('#payment').val() === 'credit card'){
         // Validate the card number
